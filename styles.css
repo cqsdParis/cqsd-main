@@ -160,10 +160,66 @@ nav a:focus-visible::after {
   color: var(--ink);
 }
 
+/* Temporary recruitment banner — remove with the matching HTML block. */
+.recruitment-banner {
+  width: min(1376px, calc(100% - 32px));
+  margin: 16px auto 0;
+  color: var(--cream);
+  background: var(--teal-dark);
+  border-left: 5px solid var(--aqua);
+}
+
+.recruitment-banner a {
+  min-height: 62px;
+  padding: 14px max(32px, calc((100% - 1240px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  transition: background 180ms ease;
+}
+
+.recruitment-banner a:hover,
+.recruitment-banner a:focus-visible {
+  background: rgba(128, 240, 222, 0.08);
+}
+
+.recruitment-banner a:focus-visible {
+  outline: 2px solid var(--aqua);
+  outline-offset: -4px;
+}
+
+.recruitment-banner-label {
+  flex: 0 0 auto;
+  padding: 7px 10px 6px;
+  color: var(--teal-dark);
+  background: var(--aqua);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.recruitment-banner-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.06rem;
+  line-height: 1.4;
+}
+
+.recruitment-banner-text strong {
+  margin-left: 8px;
+  color: var(--aqua);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .hero {
   width: min(1376px, calc(100% - 32px));
   min-height: 720px;
-  margin: 16px auto 0;
+  margin: 0 auto;
   padding: 90px max(32px, calc((100% - 1240px) / 2)) 0;
   background:
     radial-gradient(circle at 75% 25%, rgba(128, 240, 222, 0.18), transparent 25%),
@@ -1431,9 +1487,33 @@ footer {
     scroll-margin-top: 122px;
   }
 
-  .hero {
+  .recruitment-banner {
     width: calc(100% - 16px);
     margin-top: 8px;
+    border-left-width: 4px;
+  }
+
+  .recruitment-banner a {
+    min-height: 0;
+    padding: 13px 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .recruitment-banner-text {
+    font-size: 0.98rem;
+  }
+
+  .recruitment-banner-text strong {
+    margin-left: 4px;
+    font-size: 0.66rem;
+  }
+
+  .hero {
+    width: calc(100% - 16px);
+    margin-top: 0;
     padding: 52px 20px 0;
   }
 
