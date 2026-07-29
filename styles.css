@@ -739,13 +739,13 @@ h2 {
 .people {
   padding-block: 130px;
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
-  gap: 100px;
+  grid-template-columns: 1fr;
+  gap: 56px;
   border-top: 1px solid var(--line);
 }
 
 .people-intro {
-  max-width: 480px;
+  max-width: 720px;
 }
 
 .people-intro h2 {
@@ -759,54 +759,6 @@ h2 {
   line-height: 1.75;
 }
 
-.pi-profile {
-  display: grid;
-  grid-template-columns: minmax(190px, 0.78fr) 1.22fr;
-  min-height: 430px;
-  overflow: hidden;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  background: rgba(0, 111, 115, 0.045);
-}
-
-.pi-profile-photo {
-  position: relative;
-  min-height: 100%;
-  margin: 0;
-  overflow: hidden;
-  background: #d9dddc;
-}
-
-.pi-profile-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 430px;
-  display: block;
-  object-fit: cover;
-}
-
-.pi-profile-photo figcaption {
-  position: absolute;
-  right: 12px;
-  bottom: 10px;
-  padding: 5px 8px;
-  color: #fff;
-  background: rgba(16, 35, 39, 0.78);
-  font-size: 0.58rem;
-  letter-spacing: 0.04em;
-}
-
-.pi-profile-photo figcaption a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.pi-profile-copy {
-  padding: 38px 36px;
-  align-self: center;
-}
-
 .profile-label,
 .profile-role {
   color: var(--teal);
@@ -816,23 +768,9 @@ h2 {
   text-transform: uppercase;
 }
 
-.pi-profile-copy h3 {
-  margin: 12px 0 7px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 400;
-  line-height: 1;
-}
-
 .profile-role {
   margin-bottom: 25px;
   color: var(--ink-soft);
-}
-
-.pi-profile-copy > p:not(.profile-label):not(.profile-role) {
-  color: var(--ink-soft);
-  font-size: 0.86rem;
-  line-height: 1.7;
 }
 
 .profile-links {
@@ -849,6 +787,87 @@ h2 {
   font-size: 0.64rem;
   font-weight: 800;
   letter-spacing: 0.055em;
+}
+
+.pi-card-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 24px;
+}
+
+.pi-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.78fr) 1.22fr;
+  min-height: 380px;
+  overflow: hidden;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: rgba(0, 111, 115, 0.045);
+}
+
+.pi-card-photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #d9dddc;
+}
+
+.pi-card-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.pi-card-photo figcaption {
+  position: absolute;
+  right: 10px;
+  bottom: 9px;
+  padding: 5px 7px;
+  color: #fff;
+  background: rgba(16, 35, 39, 0.78);
+  font-size: 0.56rem;
+  letter-spacing: 0.035em;
+}
+
+.pi-card-photo figcaption a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pi-card-copy {
+  padding: 28px 26px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pi-card-copy h3 {
+  min-height: 2.08em;
+  margin: 12px 0 7px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 2.15vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.pi-card-copy > p:not(.profile-label):not(.profile-role) {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.68;
+}
+
+.pi-card-copy .profile-role {
+  min-height: 2.6em;
+  margin-bottom: 20px;
+}
+
+.pi-card-copy .profile-links {
+  margin-top: auto;
+  padding-top: 24px;
 }
 
 .team-list {
@@ -1324,6 +1343,18 @@ footer {
     grid-column: auto;
   }
 
+  .pi-card-grid {
+    grid-column: auto;
+  }
+
+  .pi-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pi-card-photo {
+    aspect-ratio: 5 / 4;
+  }
+
   .research-grid {
     grid-template-columns: 1fr;
   }
@@ -1460,17 +1491,24 @@ footer {
     display: flex;
   }
 
-  .pi-profile {
+  .pi-card-grid {
     grid-template-columns: 1fr;
   }
 
-  .pi-profile-photo img {
-    min-height: auto;
-    aspect-ratio: 1 / 1;
+  .pi-card-photo {
+    aspect-ratio: 4 / 3;
   }
 
-  .pi-profile-copy {
-    padding: 30px 24px 34px;
+  .pi-card-copy {
+    padding: 28px 24px 32px;
+  }
+
+  .pi-card-copy h3 {
+    min-height: auto;
+  }
+
+  .pi-card-copy .profile-role {
+    min-height: auto;
   }
 
   .funding {
