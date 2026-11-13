@@ -160,66 +160,10 @@ nav a:focus-visible::after {
   color: var(--ink);
 }
 
-/* Temporary recruitment banner — remove with the matching HTML block. */
-.recruitment-banner {
-  width: min(1376px, calc(100% - 32px));
-  margin: 16px auto 0;
-  color: var(--cream);
-  background: var(--teal-dark);
-  border-left: 5px solid var(--aqua);
-}
-
-.recruitment-banner a {
-  min-height: 62px;
-  padding: 14px max(32px, calc((100% - 1240px) / 2));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  transition: background 180ms ease;
-}
-
-.recruitment-banner a:hover,
-.recruitment-banner a:focus-visible {
-  background: rgba(128, 240, 222, 0.08);
-}
-
-.recruitment-banner a:focus-visible {
-  outline: 2px solid var(--aqua);
-  outline-offset: -4px;
-}
-
-.recruitment-banner-label {
-  flex: 0 0 auto;
-  padding: 7px 10px 6px;
-  color: var(--teal-dark);
-  background: var(--aqua);
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.recruitment-banner-text {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.06rem;
-  line-height: 1.4;
-}
-
-.recruitment-banner-text strong {
-  margin-left: 8px;
-  color: var(--aqua);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.055em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
 .hero {
   width: min(1376px, calc(100% - 32px));
   min-height: 720px;
-  margin: 0 auto;
+  margin: 16px auto 0;
   padding: 90px max(32px, calc((100% - 1240px) / 2)) 0;
   background:
     radial-gradient(circle at 75% 25%, rgba(128, 240, 222, 0.18), transparent 25%),
@@ -1097,77 +1041,6 @@ h2 {
   line-height: 1.75;
 }
 
-.hiring-card {
-  margin-top: 48px;
-  padding: 34px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
-  gap: 48px;
-  border: 1px solid rgba(128,240,222,0.25);
-  background: rgba(255,255,255,0.055);
-  backdrop-filter: blur(12px);
-}
-
-.hiring-label {
-  margin-bottom: 15px;
-  color: var(--aqua);
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.hiring-card h3 {
-  max-width: 720px;
-  margin-bottom: 18px;
-  color: white;
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 2.8vw, 3rem);
-  font-weight: 400;
-  line-height: 1.08;
-}
-
-.hiring-card > div:first-child > p:last-child {
-  max-width: 720px;
-  margin-bottom: 0;
-  color: rgba(255,255,255,0.7);
-  font-size: 0.92rem;
-  line-height: 1.68;
-}
-
-.hiring-meta {
-  padding-left: 30px;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 20px;
-  border-left: 1px solid rgba(128,240,222,0.22);
-}
-
-.hiring-meta p {
-  margin: 0;
-}
-
-.hiring-meta p span,
-.hiring-meta small {
-  display: block;
-  margin-bottom: 5px;
-  color: rgba(255,255,255,0.55);
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.hiring-meta p strong {
-  font-size: 0.82rem;
-  line-height: 1.5;
-}
-
-.hiring-meta small {
-  margin: -10px 0 0;
-}
-
 .join-actions {
   margin-top: 38px;
   display: flex;
@@ -1638,33 +1511,9 @@ footer {
     scroll-margin-top: 122px;
   }
 
-  .recruitment-banner {
-    width: calc(100% - 16px);
-    margin-top: 8px;
-    border-left-width: 4px;
-  }
-
-  .recruitment-banner a {
-    min-height: 0;
-    padding: 13px 16px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .recruitment-banner-text {
-    font-size: 0.98rem;
-  }
-
-  .recruitment-banner-text strong {
-    margin-left: 4px;
-    font-size: 0.66rem;
-  }
-
   .hero {
     width: calc(100% - 16px);
-    margin-top: 0;
+    margin-top: 8px;
     padding: 52px 20px 0;
   }
 
@@ -1810,18 +1659,6 @@ footer {
 
   .join-inner {
     padding-block: 85px;
-  }
-
-  .hiring-card {
-    padding: 26px;
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .hiring-meta {
-    padding: 25px 0 0;
-    border-top: 1px solid rgba(128,240,222,0.22);
-    border-left: 0;
   }
 
   .join-actions {
